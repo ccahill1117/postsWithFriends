@@ -20,6 +20,15 @@ app.get('/posts', (req, res) => {
 
     }]
   )
+}),
+app.get('/', (req, res) => {
+  res.send(
+    [{
+      title: "Hello World!",
+      
+
+    }]
+  )
 })
 
 app.listen(process.env.PORT || 8081)

@@ -11,9 +11,14 @@ export default new Router({
   // mode: 'history',
   routes: [
     {
-    path: '/posts',
-    name: 'Posts',
-    component: Posts
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '/posts',
+      name: 'Posts',
+      component: Posts
     }
   ]
 })
