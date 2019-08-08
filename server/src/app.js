@@ -30,6 +30,7 @@ app.get('/posts', (req, res) => {
   }).sort({_id:-1})
 })
 
+//get one post
 app.get('/post/:id', (req, res) => {
   var db = req.db;
   Post.findById(req.params.id, 'title description', function (error, post) {
@@ -56,6 +57,21 @@ app.put('/posts/:id', (req, res) => {
   })
 })
 
+// Delete a post
+app.delete('/posts/:id', (req, res) => {
+  var db = req.db;
+  Post.remove({
+    _id: req.params.id
+  }, function(err, post){
+    if (err)
+      res.send(err)
+    res.send({
+      success: true
+    })
+  })
+})
+
+// add a new post
 app.post('/posts', (req, res) => {
   var db = req.db;
   var title = req.body.title;

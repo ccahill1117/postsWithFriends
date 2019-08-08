@@ -4,7 +4,7 @@ export default {
   fetchPosts () {
     return Api().get('posts')
   },
-  
+
   addPost (params) {
     return Api().post('posts',params)
   },
@@ -15,5 +15,9 @@ export default {
 
   getPost (params) {
     return Api().get('post/' + params.id)
+  },
+
+  deletePost (id) {
+    return Api().delete('posts/' + id)
   }
 }
